@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CoursesApp</string>
+    <string name="sales_item">Sales</string>
+    <string name="contacts_text">Контакты</string>
+    <string name="about_text">О нас</string>
+    <string name="main_scene_text">Главная</string>
+    <string name="logo_of_app_1">Courses</string>
+    <string name="logo_of_app_2">App</string>
+    <string name="filters_item">Filters</string>
+    <string name="category_item">Category item</string>
+    <string name="course_start_date">Старт обучения:</string>
+    <string name="course_level">Уровень:</string>
+</resources>
