@@ -1,6 +1,7 @@
 package com.lizaveta16.coursesapp
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -43,6 +44,11 @@ class MainActivity : AppCompatActivity() {
             courseList.clear()
             courseList.addAll(fullCoursesList)
             courseAdapter.notifyDataSetChanged()
+        })
+
+        binding.cartBut.setOnClickListener(View.OnClickListener { view ->
+            var intent = Intent(this, Cart::class.java)
+            context.startActivity(intent)
         })
     }
 
