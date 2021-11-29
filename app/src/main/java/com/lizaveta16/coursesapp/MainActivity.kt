@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setCategoryRecycler(categoryList: MutableList<Category>) {
-        var layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
+        val layoutManager : RecyclerView.LayoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
         binding.categoryRecycler.layoutManager = layoutManager
 
         val categoryAdapter : CategoryAdapter = CategoryAdapter(this, categoryList)

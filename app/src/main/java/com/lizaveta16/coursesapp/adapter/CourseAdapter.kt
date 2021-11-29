@@ -1,23 +1,41 @@
 package com.lizaveta16.coursesapp.adapter
 
 import android.content.Context
+import android.graphics.Color
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.lizaveta16.coursesapp.model.Category
+import com.lizaveta16.coursesapp.R
+import com.lizaveta16.coursesapp.model.Course
 
-class CourseAdapter(var context: Context, var courses : List<Category>) : RecyclerView.Adapter<CourseAdapter.CourseViewHolder>(){
+class CourseAdapter(private var context: Context, private var courses : List<Course>) : RecyclerView.Adapter<CourseAdapter.CourseViewHolder>(){
 
     class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-
+        val courseBg : LinearLayout = itemView.findViewById(R.id.courseBg)
+        val courseImg : ImageView = itemView.findViewById(R.id.courseImg)
+        val courseTitle : TextView = itemView.findViewById(R.id.courseTitle)
+        val courseDate : TextView = itemView.findViewById(R.id.courseDate)
+        val courseLevel : TextView = itemView.findViewById(R.id.courseLevel)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
-        TODO("Not yet implemented")
+        val courseItems : View = LayoutInflater.from(context).inflate(R.layout.course_item, parent, false)
+        return CourseAdapter.CourseViewHolder(courseItems)
     }
 
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.courseBg.setBackgroundColor(Color.parseColor(courses[position].color))
+
+        val imgId : Int = context.resources.getIdentifier("ic_" + courses[position].img, "drawable", context.packageName)
+        holder.courseImg.setImageResource(imgId)
+
+        holder.courseTitle.text = courses[position].title
+        holder.courseDate.text = courses[position].date
+        holder.courseLevel.text = courses[position].level
     }
 
     override fun getItemCount(): Int {
