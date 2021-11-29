@@ -29,12 +29,12 @@ class MainActivity : AppCompatActivity() {
 
 
         var courseList = mutableListOf<Course>()
-        courseList.add(Course(1, "java", "Профессия Java\n разработчик", "1 января", "начальный", "#424345"))
-        courseList.add(Course(2, "python", "Профессия Python\n разработчик", "10 января", "начальный", "#9FA52D"))
-        courseList.add(Course(3, "unity", "Разработка на \n Unity", "1 декабря", "начальный", "#690058"))
-        courseList.add(Course(4, "frontend", "Профессия Frontend\n разработчик", "15 декабря", "начальный", "#C5371D"))
-        courseList.add(Course(5, "backend", "Профессия Backend\n разработчик", "3 февраля", "начальный", "#201CEE"))
-        courseList.add(Course(6, "fullstack", "Профессия Fullstack\n разработчик", "10 января", "начальный", "#FFC107"))
+        courseList.add(Course(1, "java", "Профессия Java\n разработчик", "1 января", "начальный", "#424345", "Test"))
+        courseList.add(Course(2, "python", "Профессия Python\n разработчик", "10 января", "начальный", "#9FA52D", "Test"))
+        courseList.add(Course(3, "unity", "Разработка на \n Unity", "1 декабря", "начальный", "#690058", "Test"))
+        courseList.add(Course(4, "frontend", "Профессия Frontend\n разработчик", "15 декабря", "начальный", "#C5371D", "Test"))
+        courseList.add(Course(5, "backend", "Профессия Backend\n разработчик", "3 февраля", "начальный", "#201CEE", "Test"))
+        courseList.add(Course(6, "fullstack", "Профессия Fullstack\n разработчик", "10 января", "начальный", "#FFC107", "Test"))
         setCourseRecycler(courseList)
     }
 

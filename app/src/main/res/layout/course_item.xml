@@ -26,6 +26,7 @@
                 android:id="@+id/courseImg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:transitionName="courseImg"
                 app:srcCompat="@drawable/ic_java"
                 tools:layout_editor_absoluteX="56dp"
                 tools:layout_editor_absoluteY="260dp" />

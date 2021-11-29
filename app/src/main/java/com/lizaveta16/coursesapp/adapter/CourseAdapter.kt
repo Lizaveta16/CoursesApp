@@ -1,15 +1,19 @@
 package com.lizaveta16.coursesapp.adapter
 
+import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
+import android.util.Pair
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.lizaveta16.coursesapp.CoursePage
 import com.lizaveta16.coursesapp.R
 import com.lizaveta16.coursesapp.model.Course
 
@@ -37,6 +41,20 @@ class CourseAdapter(private var context: Context, private var courses : List<Cou
         holder.courseTitle.text = courses[position].title
         holder.courseDate.text = courses[position].date
         holder.courseLevel.text = courses[position].level
+
+        holder.itemView.setOnClickListener(View.OnClickListener{ view ->
+            var intent = Intent(context, CoursePage::class.java)
+
+            var options = ActivityOptions.makeSceneTransitionAnimation(context as Activity,
+                                                                        Pair<View, String>(holder.courseImg,"courseImg"))
+            intent.putExtra("courseBg", Color.parseColor(courses[position].color))
+            intent.putExtra("courseImg", context.resources.getIdentifier("ic_" + courses[position].img, "drawable", context.packageName))
+            intent.putExtra("courseTitle", courses[position].title)
+            intent.putExtra("courseDate", courses[position].date)
+            intent.putExtra("courseLevel", courses[position].level)
+            intent.putExtra("courseDesc", courses[position].description)
+            context.startActivity(intent, options.toBundle())
+        })
     }
 
     override fun getItemCount(): Int {

@@ -77,18 +77,20 @@
         android:layout_width="0dp"
         android:layout_height="230dp"
         android:scaleType="centerCrop"
+        android:transitionName="courseImg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_java" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/coursePageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="@string/app_name"
         android:gravity="center"
+        android:text="@string/app_name"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,9 +99,11 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/courseBg"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         app:cardBackgroundColor="@android:color/transparent"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
@@ -128,7 +132,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="45dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="20dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat"
@@ -149,6 +153,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="@string/app_name"
+                    android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
 
@@ -161,6 +166,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="@string/app_name"
+                    android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -172,7 +178,7 @@
         android:id="@+id/coursePageDesc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="65dp"
+        android:layout_marginStart="55dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="55dp"
         android:contentDescription="@string/course_page_desc"
@@ -189,10 +195,10 @@
         android:id="@+id/addToCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/coursePageDesc"
-        app:srcCompat="@drawable/ic_shop"
-        android:background="@android:color/transparent"/>
+        app:srcCompat="@drawable/ic_shop" />
 </androidx.constraintlayout.widget.ConstraintLayout>
