@@ -6,6 +6,7 @@ class Course (val id: Int,
               var date : String,
               var level : String,
               var color : String,
-              var description : String) {
+              var description : String,
+              var category: Int) {
 
 }

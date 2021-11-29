@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.lizaveta16.coursesapp.MainActivity
 import com.lizaveta16.coursesapp.R
 import com.lizaveta16.coursesapp.model.Category
 
@@ -23,6 +24,10 @@ class CategoryAdapter(private var context: Context, private var categories : Lis
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         holder.categoryTitle.text = categories[position].title
+
+        holder.itemView.setOnClickListener(View.OnClickListener { view ->
+            MainActivity.showCoursesByCategory(categories[position].id)
+        })
     }
 
     override fun getItemCount(): Int {
