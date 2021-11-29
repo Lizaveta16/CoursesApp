@@ -2,7 +2,10 @@ package com.lizaveta16.coursesapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import com.lizaveta16.coursesapp.databinding.ActivityCoursePageBinding
+import com.lizaveta16.coursesapp.model.Order
 
 class CoursePage : AppCompatActivity() {
 
@@ -19,5 +22,11 @@ class CoursePage : AppCompatActivity() {
         binding.coursePageDate.setText(intent.getStringExtra("courseDate"))
         binding.coursePageLevel.setText(intent.getStringExtra("courseLevel"))
         binding.coursePageDesc.setText(intent.getStringExtra("courseDesc"))
+    }
+
+    fun addToCart(view: View){
+        var itemId : Int = intent.getIntExtra("courseId", 0)
+        Order.items_id.add(itemId)
+        Toast.makeText(this, "Добавлено!", Toast.LENGTH_LONG).show()
     }
 }

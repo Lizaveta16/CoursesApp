@@ -53,6 +53,7 @@ class CourseAdapter(private var context: Context, private var courses : List<Cou
             intent.putExtra("courseDate", courses[position].date)
             intent.putExtra("courseLevel", courses[position].level)
             intent.putExtra("courseDesc", courses[position].description)
+            intent.putExtra("courseId", courses[position].id)
             context.startActivity(intent, options.toBundle())
         })
     }
