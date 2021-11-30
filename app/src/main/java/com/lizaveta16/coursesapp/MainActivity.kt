@@ -21,9 +21,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        MainActivity.Companion.setContext(this);
+        setContext(this);
 
-        var categoryList = mutableListOf<Category>()
+        init()
+    }
+
+    private fun init(){
+        //set category
+        val categoryList = mutableListOf<Category>()
         categoryList.add(Category(1, "Игры"))
         categoryList.add(Category(2, "Сайты"))
         categoryList.add(Category(3, "Языки"))
@@ -31,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         setCategoryRecycler(categoryList)
 
+        //set courses
         courseList.add(Course(1, "java", "Профессия Java\n разработчик", "1 января", "начальный", "#424345", "Test", 3))
         courseList.add(Course(2, "python", "Профессия Python\n разработчик", "10 января", "начальный", "#9FA52D", "Test", 3))
         courseList.add(Course(3, "unity", "Разработка на \n Unity", "1 декабря", "начальный", "#690058", "Test", 1))
@@ -40,16 +46,19 @@ class MainActivity : AppCompatActivity() {
         fullCoursesList.addAll(courseList)
         setCourseRecycler(courseList)
 
-        binding.allCategoriesBut.setOnClickListener(View.OnClickListener { view ->
-            courseList.clear()
-            courseList.addAll(fullCoursesList)
-            courseAdapter.notifyDataSetChanged()
-        })
+        binding.apply {
+            allCategoriesBut.setOnClickListener(View.OnClickListener { view ->
+                courseList.clear()
+                courseList.addAll(fullCoursesList)
+                courseAdapter.notifyDataSetChanged()
+            })
 
-        binding.cartBut.setOnClickListener(View.OnClickListener { view ->
-            var intent = Intent(this, Cart::class.java)
-            context.startActivity(intent)
-        })
+            cartBut.setOnClickListener(View.OnClickListener { view ->
+                var intent = Intent(this@MainActivity, Cart::class.java)
+                context.startActivity(intent)
+            })
+        }
+
     }
 
     private fun setCourseRecycler(courseList: MutableList<Course>) {
@@ -90,8 +99,8 @@ class MainActivity : AppCompatActivity() {
             courseAdapter.notifyDataSetChanged()
         }
 
-        fun setContext(con: Context) {
-            context=con
+        fun setContext(ctx: Context) {
+            context=ctx
             courseAdapter = CourseAdapter(context, courseList)
         }
     }
