@@ -25,7 +25,7 @@ class CoursePage : AppCompatActivity() {
 
         binding.addToCart.setOnClickListener(View.OnClickListener { view ->
             var itemId : Int = intent.getIntExtra("courseId", 0)
-            Order.items_id.add(itemId)
+            Order.itemsInCart.add(itemId)
             Toast.makeText(this, "Добавлено!", Toast.LENGTH_SHORT).show()
         })
     }
